@@ -1,0 +1,48 @@
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+  background-color: #f0f4f8;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.logo {
+  width: 90%;
+  height: auto;
+}
+
+form {
+  width: 100%;
+  max-width: 400px;
+}
+
+ion-item {
+  margin-bottom: 15px;
+  border-radius: 15px;
+}
+
+.input-label{
+  color: #696969;
+}
+
+.login-button {
+  margin-top: 20px;
+}
+
+.signup-link {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.signup-link a {
+  color: #3880ff;
+  text-decoration: none;
+}
