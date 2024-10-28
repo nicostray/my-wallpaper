@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,56 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Home</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Bienvenido/a</ion-card-title>
+      <ion-card-subtitle>{{user}}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+  <form>
+    <ion-item [ngClass]="{ 'moveOnClear': isCleaned }">
+      <ion-input labelPlacement="floating" [(ngModel)]="name" name="name">
+        <div slot="label" class="input-label">Nombre</div>
+      </ion-input>
+    </ion-item>
+
+    <ion-item [ngClass]="{ 'moveOnClear': isCleaned }">
+      <ion-input labelPlacement="floating" [(ngModel)]="lastName" name="lastName">
+        <div slot="label" class="input-label">Apellido</div>
+      </ion-input>
+    </ion-item>
+
+    <ion-item [ngClass]="{ 'moveOnClear': isCleaned }">
+      <ion-label>Nivel Educativo</ion-label>
+      <ion-select [(ngModel)]="educationLevel" name="educationLevel">
+        <ion-select-option value="preescolar">Preescolar</ion-select-option>
+        <ion-select-option value="basica">Básica</ion-select-option>
+        <ion-select-option value="media">Media</ion-select-option>
+        <ion-select-option value="superior">Superior</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item [ngClass]="{ 'moveOnClear': isCleaned }">
+      <ion-label>Fecha de Nacimiento</ion-label>
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+    </ion-item>
+
+    <div class="button__container">
+      <ion-button fill="outline" type="submit" class="login-button" (click)="(clearInputs())">Limpiar</ion-button>
+      <ion-button type="submit" class="login-button" (click)="showInfo()">Mostrar</ion-button>
+    </div>
+  </form>
+
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime id="datetime"></ion-datetime>
+    </ng-template>
+  </ion-modal>
 </ion-content>
+

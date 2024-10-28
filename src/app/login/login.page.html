@@ -6,18 +6,18 @@
 
     <form>
       <ion-item>
-        <ion-input labelPlacement="floating">
-          <div slot="label" class="input-label">Correo Electrónico</div>
+        <ion-input labelPlacement="floating" [(ngModel)]="user" name="user">
+          <div slot="label" class="input-label">Usuario</div>
         </ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input labelPlacement="floating" type="password">
+        <ion-input labelPlacement="floating" type="password" [(ngModel)]="password" name="password">
           <div slot="label" class="input-label">Contraseña</div>
         </ion-input>
       </ion-item>
 
-      <ion-button expand="block" type="submit" class="login-button">Iniciar Sesión</ion-button>
+      <ion-button expand="block" type="submit" class="login-button" (click)="login()">Iniciar Sesión</ion-button>
     </form>
 
     <div class="signup-link">

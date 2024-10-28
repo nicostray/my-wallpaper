@@ -25,3 +25,25 @@
 #container a {
   text-decoration: none;
 }
+
+.button__container{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+@keyframes rightMovement {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.moveOnClear {
+  animation: rightMovement 1s ease;
+}
