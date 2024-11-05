@@ -1,0 +1,16 @@
+.favorite__container{
+  width: 100%;
+  height: fit-content;
+  display:flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 1px;
+}
+
+
+app-image-item{
+  height: 90px;
+  width: 49%;
+  position: relative;
+  background-color: black;
+}

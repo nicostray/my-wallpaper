@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+ <ion-list>
+  <ion-item *ngFor="let category of categories">
+    <div class="category__container">
+      <p class="category__name">{{category.name}}</p>
+      <img src="{{category.image}}" alt="category.name" />
+    </div>
+  </ion-item>
+ </ion-list>
+</ion-content>

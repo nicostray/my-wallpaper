@@ -31,7 +31,7 @@ export class LoginPage implements OnInit {
 
     const isValid = this.loginValidation();
     if(!isValid) return;
-    this.navCtrl.navigateForward(['/home'],{
+    this.navCtrl.navigateForward(['/tabs/home'],{
       queryParams: {
         user: this.user,
         password: this.password
