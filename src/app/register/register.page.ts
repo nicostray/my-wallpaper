@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
+import { DatabaseServiceService } from '../service/database-service.service';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,8 @@ export class RegisterPage implements OnInit {
 
   constructor(
     private navCtrl: NavController,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private databaseService: DatabaseServiceService
   ) {}
 
   ngOnInit() {}
@@ -32,9 +34,9 @@ export class RegisterPage implements OnInit {
     });
   }
 
-  async showAlert(message: string) {
+  async showAlert(title: string, message: string) {
     const alert = await this.alertController.create({
-      header: 'Error',
+      header: title,
       message,
       buttons: ['OK'],
     });
@@ -43,29 +45,45 @@ export class RegisterPage implements OnInit {
 
   registerValidation(): boolean {
     if (!this.user) {
-      this.showAlert('El usuario es requerido');
+      this.showAlert('Error','El usuario es requerido');
       return false;
     }
     if (this.user.length < 3 || this.user.length > 8) {
-      this.showAlert('El usuario debe tener entre 3 y 8 caracteres');
+      this.showAlert('Error','El usuario debe tener entre 3 y 8 caracteres');
       return false;
     }
     if (!this.name) {
-      this.showAlert('El nombre es requerido');
+      this.showAlert('Error','El nombre es requerido');
       return false;
     }
     if (!this.lastname) {
-      this.showAlert('El apellido es requerido');
+      this.showAlert('Error','El apellido es requerido');
       return false;
     }
     if (!this.password) {
-      this.showAlert('La contraseña es requerida');
+      this.showAlert('Error','La contraseña es requerida');
       return false;
     }
     if (this.password.length != 4) {
-      this.showAlert('La contraseña debe tener 4 caracteres');
+      this.showAlert('Error','La contraseña debe tener 4 caracteres');
       return false;
     }
     return true;
+  }
+
+  async registerUser(){
+    this.databaseService.executeSQL(
+      `INSERT INTO users (username, name, lastname, password) VALUES (?, ?, ?, ?)`,
+      [this.user, this.name, this.lastname, this.password]
+    ).then(() => {
+      this.showAlert('Éxito','Usuario registrado correctamente');
+      localStorage.setItem('username', this.user);
+      localStorage.setItem('name', this.name);
+      localStorage.setItem('lastname', this.lastname);
+      this.navCtrl.navigateForward(['/tabs/home']);
+    }).catch((error) => {
+      console.error('Error al registrar usuario', error);
+      this.showAlert('Error','Error al registrar usuario');
+    });
   }
 }
