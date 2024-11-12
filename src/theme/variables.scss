@@ -1,2 +1,10 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+:root {
+  --ion-tab-bar-background: #171a21; /* Color de fondo de la barra de pestañas */
+  --ion-tab-bar-color:  white; /* Color de los íconos y texto cuando están inactivos */
+  --ion-tab-bar-color-selected: #06b3c3; /* Color de los íconos y texto cuando están activos */
+  /*Cambiar color de fondo de ion-content: */
+  --ion-background-color: #1f2a38;
+}

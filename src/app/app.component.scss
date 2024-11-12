@@ -2,3 +2,18 @@ ion-img {
   max-width: 60%;
   margin: 0 auto;
 }
+
+// ion-content{
+//   --background: rgb(171, 171, 171);
+// }
+
+ion-title, ion-icon, ion-label, ion-item{
+  --color: white;
+  color: white;
+}
+
+ion-toolbar{
+  --background: #171a21;
+  background-color: #171a21;
+  background: #171a21;
+}

@@ -4,17 +4,20 @@
   align-items: center;
   height: 100%;
   padding: 20px;
-  background-color: #f0f4f8;
+  color: white;
+  --color: white;
 }
 
 h1{
-  color: #272727;
   margin: 10px 0 30px 0;
 }
 
 form {
   width: 100%;
   max-width: 400px;
+  background-color: #171a21;
+  padding: 20px;
+  border-radius: 15px;
 }
 
 ion-item {
@@ -22,8 +25,13 @@ ion-item {
   border-radius: 15px;
 }
 
-.input-label{
-  color: #696969;
+ion-item ion-label{
+  color: white;
+  --color: white;
+}
+
+ion-input div{
+  color: rgb(197, 197, 197);
 }
 
 .register-button {
@@ -38,4 +46,12 @@ ion-item {
 .signup-link a {
   color: #3880ff;
   text-decoration: none;
+}
+
+::ng-deep ion-input .native-input {
+  color: white !important;
+}
+
+ion-input, ion-item {
+  --background: #32353c;
 }
