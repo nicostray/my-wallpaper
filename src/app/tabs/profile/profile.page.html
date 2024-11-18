@@ -6,7 +6,8 @@
 
 <ion-content [fullscreen]="true">
   <div class="profile__container">
-  <p>Nombre de usuario: {{username}}</p>
-  <p>Nombre completo: {{name + ' ' + lastname}}</p>
+    <img [src]="profileImage" alt="Avatar" class="profile__avatar">
+    <p>Usuario: {{username}}</p>
+    <p>Nombre: {{name + ' ' + lastname}}</p>
   </div>
-  </ion-content>
+</ion-content>
