@@ -31,9 +31,14 @@ const routes: Routes = [
         path: 'profile',
         loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
       },
+      {
+        path: 'subscription',
+        loadChildren: () => import('./subscription/subscription.module').then( m => m.SubscriptionPageModule)
+      },
       { path: '', redirectTo: '/tabs/home', pathMatch: 'full' },
     ],
   },
+
 ];
 
 @NgModule({

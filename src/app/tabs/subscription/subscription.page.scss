@@ -1,0 +1,42 @@
+.subscription__container{
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.subscription__container p{
+  margin-bottom: 40px;
+}
+
+.sub_card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 15px;
+  width: 200px;
+  color:white;
+  margin: 0 auto 20px;
+}
+
+ion-icon{
+  font-size: 3rem;
+  margin: 20px 0;
+  color: #06b3c3;
+}
+
+.sub_card_text{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(205, 205, 205, 0.832);
+  width: 100%;
+  gap: 10px;
+  padding: 10px;
+}
+
+.sub_card_text p, h4{
+  margin: 0;
+}
