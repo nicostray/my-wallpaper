@@ -1,0 +1,212 @@
+{
+  "anime": [
+    {
+      "title": "One Piece",
+      "image": "kJCrlhD.png"
+    },
+    {
+      "title": "One Piece 2",
+      "image": "pSG0LUf.jpeg"
+    },
+    {
+      "title": "Tensei Shitara",
+      "image": "pgXJ5v6.jpeg"
+    },
+    {
+      "title": "Soul Eater",
+      "image": "uIQ3RCD.jpeg"
+    },
+    {
+      "title": "Soul Eater 2",
+      "image": "c4XRUqx.jpeg"
+    },
+    {
+      "title": "Shingeki no Kyojin",
+      "image": "v8vF5Em.png"
+    },
+    {
+      "title": "Shingeki no Kyojin 2",
+      "image": "h7ZwKGm.png"
+    },
+    {
+      "title": "Los diarios de la boticaria",
+      "image": "eubRImr.jpeg"
+    },
+    {
+      "title": "Dr Stone",
+      "image": "grxF6vz.jpeg"
+    },
+    {
+      "title": "Yu Yu Hakusho",
+      "image": "jyXqcgB.jpeg"
+    },
+    {
+      "title": "Yu Yu Hakusho 2",
+      "image": "ou5S1wg.jpeg"
+    }
+  ],
+  "animales": [
+    {
+      "title": "Zorro",
+      "image": "RAkjfaQ.png"
+    },
+    {
+      "title": "Tigre",
+      "image": "wm0EkRn.png"
+    },
+    {
+      "title": "Tigre 2",
+      "image": "pDpn3SM.png"
+    },
+    {
+      "title": "Tigre Robot",
+      "image": "5yUekxZ.png"
+    },
+    {
+      "title": "Felino",
+      "image": "cHgNHd6.jpeg"
+    },
+    {
+      "title": "Tigre Sol",
+      "image": "Tb0b23J.jpeg"
+    },
+    {
+      "title": "Tigre 3",
+      "image": "wTSBwjQ.png"
+    },
+    {
+      "title": "Lobo",
+      "image": "9rYOjvv.jpeg"
+    },
+    {
+      "title": "Gatos",
+      "image": "J6T4kpp.png"
+    }
+  ],
+  "comida": [
+    {
+      "title": "Comida 1",
+      "image": "wodZZ4Z.png"
+    },
+    {
+      "title": "Comida 2",
+      "image": "9AqyPQV.png"
+    },
+    {
+      "title": "Comida 4",
+      "image": "w1FBFiF.png"
+    },
+    {
+      "title": "Comida 5",
+      "image": "lOYku3U.png"
+    },
+    {
+      "title": "Comida 6",
+      "image": "rnlpSUE.png"
+    },
+    {
+      "title": "Comida 7",
+      "image": "38DG3WJ.png"
+    },
+    {
+      "title": "Comida 8",
+      "image": "YORMzdj.png"
+    },
+    {
+      "title": "Comida 9",
+      "image": "MPLy4fK.png"
+    },
+    {
+      "title": "Comida 10",
+      "image": "mLL3AYU.jpeg"
+    },
+    {
+      "title": "Comida 11",
+      "image": "7EzXPux.jpeg"
+    }
+  ],
+  "tecnologia": [
+    {
+      "title": "Razer 1",
+      "image": "EXNaUtw.png"
+    },
+    {
+      "title": "Razer 2",
+      "image": "wPuQlEE.png"
+    },
+    {
+      "title": "Portal",
+      "image": "NP5PVZ9.png"
+    },
+    {
+      "title": "Intra PC",
+      "image": "aolST6g.png"
+    },
+    {
+      "title": "Blue",
+      "image": "rpwQazo.png"
+    },
+    {
+      "title": "Blue Orange",
+      "image": "FkIi5hF.png"
+    },
+    {
+      "title": "Tech",
+      "image": "TWP7R9I.png"
+    },
+    {
+      "title": "CPU",
+      "image": "w9cmpmV.png"
+    },
+    {
+      "title": "Tech 2",
+      "image": "6UyXbeM.png"
+    },
+    {
+      "title": "CPU 2",
+      "image": "yHPg7mV.png"
+    }
+  ],
+  "navidad": [
+    {
+      "title": "Navidad 1",
+      "image": "zdGHjXK.png"
+    },
+    {
+      "title": "Navidad 2",
+      "image": "0u35nZK.png"
+    },
+    {
+      "title": "Navidad 3",
+      "image": "baYLt06.png"
+    },
+    {
+      "title": "Navidad 4",
+      "image": "yNKc6KZ.png"
+    },
+    {
+      "title": "Navidad 5",
+      "image": "akVBfIC.png"
+    },
+    {
+      "title": "Navidad 6",
+      "image": "9WntXG7.png"
+    },
+    {
+      "title": "Navidad 7",
+      "image": "5dyoEze.png"
+    },
+    {
+      "title": "Navidad 8",
+      "image": "4Dk1pe5.png"
+    },
+    {
+      "title": "Navidad 9",
+      "image": "gDZudpg.png"
+    },
+    {
+      "title": "Navidad 10",
+      "image": "eCXQbyb.png"
+    }
+  ]
+}
