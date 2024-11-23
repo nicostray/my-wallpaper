@@ -1,4 +1,16 @@
 .profile__container{
   color: white;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+img{
+  margin: 0 auto;
+  height: 150px;
+}
+
+ion-button{
+  display: block;
+  margin-top: 20px;
 }
