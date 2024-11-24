@@ -7,8 +7,8 @@
   display: inline-block;
   font-size: 1.25rem;
   color: #ffffff;
-  animation: flip 3s infinite;
-  animation-delay: calc(.2s * var(--i))
+  animation: flip 4.5s infinite;
+  animation-delay: calc(.30s * var(--i))
 }
 @keyframes flip {
   0%,80% {

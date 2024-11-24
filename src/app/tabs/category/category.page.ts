@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-category',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryPage implements OnInit {
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit() {
   }
@@ -33,13 +35,5 @@ export class CategoryPage implements OnInit {
       name: 'Navidad',
       image: 'assets/images/category/navidad.png'
     },
-    {
-      name: 'Navidad 2',
-      image: 'assets/images/category/navidad.png'
-    },
-    {
-      name: 'Navidad 3',
-      image: 'assets/images/category/navidad.png'
-    }
   ]
 }

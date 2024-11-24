@@ -35,9 +35,15 @@ const routes: Routes = [
         path: 'subscription',
         loadChildren: () => import('./subscription/subscription.module').then( m => m.SubscriptionPageModule)
       },
+      {
+        path: 'images',
+        loadChildren: () => import('./images/images.module').then( m => m.ImagesPageModule)
+      },
       { path: '', redirectTo: '/tabs/home', pathMatch: 'full' },
     ],
   },
+
+
 
 ];
 
