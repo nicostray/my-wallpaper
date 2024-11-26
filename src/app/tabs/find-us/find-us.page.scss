@@ -1,0 +1,15 @@
+.findUs__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.findUs__container p{
+  color: white;
+  position: absolute;
+  top: 40%;
+  margin: 0 auto;
+}

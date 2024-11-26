@@ -17,7 +17,9 @@ export class LoginPage implements OnInit {
     private databaseService: DatabaseServiceService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    localStorage.setItem('isAuthenticated', 'false');
+  }
 
   async showAlert(message: string) {
     const alert = await this.alertController.create({
@@ -34,6 +36,8 @@ export class LoginPage implements OnInit {
 
     const isUser = await this.sqlValidation();
     if(!isUser) return;
+
+    localStorage.setItem('isAuthenticated', 'true');
     this.navCtrl.navigateForward(['/tabs/home'])
   }
 

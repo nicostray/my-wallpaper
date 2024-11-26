@@ -39,9 +39,15 @@ const routes: Routes = [
         path: 'images',
         loadChildren: () => import('./images/images.module').then( m => m.ImagesPageModule)
       },
+      {
+        path: 'find-us',
+        loadChildren: () => import('./find-us/find-us.module').then( m => m.FindUsPageModule)
+      },
       { path: '', redirectTo: '/tabs/home', pathMatch: 'full' },
     ],
   },
+
+
 
 
 
