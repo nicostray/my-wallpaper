@@ -1,3 +1,4 @@
+import { NgFor } from '@angular/common';
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
@@ -5,6 +6,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
   standalone: true,
   templateUrl: './image-item.component.html',
   styleUrls: ['./image-item.component.scss'],
+  imports: [NgFor]
 })
 export class ImageItemComponent {
   constructor() { }
