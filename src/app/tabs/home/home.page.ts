@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import jsonData from '../../../assets/imageList.json'
+import { NavController } from '@ionic/angular';
+import { ImageItemComponent } from '../../components/image-item/image-item.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -7,13 +9,22 @@ import jsonData from '../../../assets/imageList.json'
 })
 export class HomePage implements OnInit {
   imageList: Array<any> = []
-
-  constructor() { }
+  @ViewChildren(ImageItemComponent) imageItems!: QueryList<ImageItemComponent>;
+  constructor(
+    private navCtrl: NavController
+  ) { }
 
   ngOnInit() {
     this.imageList = this.selectRandomItems(jsonData);
   }
 
+  ionViewWillEnter() {
+    if (this.imageItems) {
+      this.imageItems.forEach((imageItem) => {
+        imageItem.checkFavorite();
+      });
+    }
+  }
 
   selectRandomItems(data: any) {
     const categories = Object.keys(data);
@@ -35,5 +46,9 @@ export class HomePage implements OnInit {
     }
 
     return selectedItems;
+  }
+
+  handleImage = (item: any) => {
+    this.navCtrl.navigateForward(`/tabs/image-viewer?imageId=${item.image}&imageName=${item.title}`);
   }
 }

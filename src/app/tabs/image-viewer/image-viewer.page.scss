@@ -1,0 +1,43 @@
+.container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.container img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+  object-position: center;
+}
+
+.heart__container{
+  position: absolute;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  top: 30px;
+  right: 30px;
+  z-index: 100;
+  background-color: rgba(236, 236, 236, 0.434);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.heart__container ion-icon{
+  font-size: 32px;
+  color: red;
+}
+
+.buttons{
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-bottom: 40px;
+}

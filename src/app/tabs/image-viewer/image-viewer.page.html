@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Viewer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <img src="https://i.imgur.com/{{imageId}}" alt="">
+    <div class="heart__container" (click)="toggleFavorite()">
+      <ion-icon [name]="isFavorite ? 'heart' : 'heart-outline'"></ion-icon>
+      <!-- <ion-icon name="heart"></ion-icon> -->
+      <!-- <ion-icon name="heart-outline"></ion-icon> -->
+    </div>
+    <div class="buttons">
+      <ion-button (click)="downloadImage()">Descargar</ion-button>
+      <ion-button (click)="goBack()" color="light">Cerrar</ion-button>
+    </div>
+  </div>
+</ion-content>

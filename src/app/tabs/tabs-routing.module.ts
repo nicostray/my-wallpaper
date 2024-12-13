@@ -43,9 +43,15 @@ const routes: Routes = [
         path: 'find-us',
         loadChildren: () => import('./find-us/find-us.module').then( m => m.FindUsPageModule)
       },
+      {
+        path: 'image-viewer',
+        loadChildren: () => import('./image-viewer/image-viewer.module').then( m => m.ImageViewerPageModule)
+      },
       { path: '', redirectTo: '/tabs/home', pathMatch: 'full' },
     ],
   },
+
+
 
 
 

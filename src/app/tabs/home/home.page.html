@@ -6,7 +6,7 @@
 
 <ion-content [fullscreen]="true">
   <div class="home__container">
-    <app-image-item [image]="item.image" [name]="item.title" *ngFor="let item of imageList" />
+    <app-image-item [image]="item.image" [name]="item.title" *ngFor="let item of imageList" (click)="handleImage(item)"/>
   </div>
 
 </ion-content>
