@@ -6,7 +6,7 @@
 
 <ion-content [fullscreen]="true">
   <div class="favorite__container">
-    <app-image-item *ngFor="let _ of iterations" />
+    <app-image-item [image]="item.id" [name]="item.name"  *ngFor="let item of favoriteList" (click)="handleImage(item)" />
   </div>
 
 </ion-content>
