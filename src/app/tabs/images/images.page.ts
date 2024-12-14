@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import jsonData from '../../../assets/imageList.json'
+import { NavController } from '@ionic/angular';
+import { ImageItemComponent } from '../../components/image-item/image-item.component';
 
 interface ImageData {
   title: string;
@@ -22,9 +24,10 @@ interface ImageList {
 })
 export class ImagesPage implements OnInit {
   imageList: Array<ImageData> = []
-
+  @ViewChildren(ImageItemComponent) imageItems!: QueryList<ImageItemComponent>;
   constructor(
     private route: ActivatedRoute,
+    private navCtrl: NavController
   ) { }
 
   ngOnInit(){
@@ -34,9 +37,20 @@ export class ImagesPage implements OnInit {
     });
   }
 
+  ionViewWillEnter() {
+    if (this.imageItems) {
+      this.imageItems.forEach((imageItem) => {
+        imageItem.checkFavorite();
+      });
+    }
+  }
+
   getImages(category: string): Array<any> {
     const imageList = (jsonData as ImageList)[category as keyof ImageList];
     return imageList;
   }
 
+  handleImage = (item: any) => {
+    this.navCtrl.navigateForward(`/tabs/image-viewer?imageId=${item.image}&imageName=${item.title}`);
+  }
 }

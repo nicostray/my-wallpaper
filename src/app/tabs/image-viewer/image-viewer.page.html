@@ -9,8 +9,9 @@
     <img src="https://i.imgur.com/{{imageId}}" alt="">
     <div class="heart__container" (click)="toggleFavorite()">
       <ion-icon [name]="isFavorite ? 'heart' : 'heart-outline'"></ion-icon>
-      <!-- <ion-icon name="heart"></ion-icon> -->
-      <!-- <ion-icon name="heart-outline"></ion-icon> -->
+    </div>
+    <div class="image__name">
+      <p>{{imageName}}</p>
     </div>
     <div class="buttons">
       <ion-button (click)="downloadImage()">Descargar</ion-button>

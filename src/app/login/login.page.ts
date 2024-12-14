@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
-// import { DatabaseServiceService } from '../service/database-service.service';
+import { DatabaseServiceService } from '../service/database-service.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,7 @@ export class LoginPage implements OnInit {
   constructor(
     private navCtrl: NavController,
     private alertController: AlertController,
-    // private databaseService: DatabaseServiceService
+    private databaseService: DatabaseServiceService
   ) {}
 
   ngOnInit() {
@@ -62,16 +62,16 @@ export class LoginPage implements OnInit {
   }
 
   async sqlValidation() {
-    // const response = await this.databaseService.getUser(
-    //   this.user,
-    //   this.password
-    // );
-    const testResponse = {
-      username: 'user',
-      name: 'John',
-      lastname: 'Doe',
-    }
-    const response = testResponse;
+    const response = await this.databaseService.getUser(
+      this.user,
+      this.password
+    );
+    // const testResponse = {
+    //   username: 'user',
+    //   name: 'John',
+    //   lastname: 'Doe',
+    // }
+    // const response = testResponse;
     if (response === null) {
       this.showAlert('Usuario o contraseña incorrectos');
       return false;
