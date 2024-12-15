@@ -2,14 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import { Filesystem, Directory, Encoding } from '@capacitor/filesystem';
 @Component({
   selector: 'app-image-viewer',
   templateUrl: './image-viewer.page.html',
   styleUrls: ['./image-viewer.page.scss'],
 })
 export class ImageViewerPage implements OnInit {
-  downloadLink= '';
-  showDownloadLink = false;
+  // downloadLink= '';
+  // showDownloadLink = false;
   imageId = '';
   imageName = '';
   isFavorite = false;
@@ -30,16 +31,43 @@ export class ImageViewerPage implements OnInit {
     this.checkFavorite()
   }
 
-  downloadImage() {
-    this.http.get(`https://i.imgur.com/${this.imageId}`, { responseType: 'blob' }).subscribe((blob: any) => {
-      const a = document.createElement('a');
-      const objectUrl = URL.createObjectURL(blob);
-      a.href = objectUrl;
-      a.download = 'image.png';
-      a.click();
-      URL.revokeObjectURL(objectUrl);
+
+
+  async downloadImage() {
+    try {
+      const blob = await this.http.get(`https://i.imgur.com/${this.imageId}`, { responseType: 'blob' }).toPromise();
+
+      let base64Data = '';
+      if (blob) {
+        base64Data = await this.convertBlobToBase64(blob);
+      } else {
+        throw new Error('Failed to download image');
+      }
+
+      const fileName = `wallpaper-${Date.now()}.jpg`;
+      await Filesystem.writeFile({
+        path: fileName,
+        data: base64Data,
+        directory: Directory.Documents,
+      });
+
+      console.log('Imagen guardada en:', fileName);
+    } catch (error) {
+      console.error('Error al descargar o guardar la imagen:', error);
+    }
+  }
+
+
+  private convertBlobToBase64(blob: Blob): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result as string);
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
     });
   }
+
+
 
   goBack(){
     this.navCtrl.back();

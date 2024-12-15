@@ -19,6 +19,7 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     localStorage.setItem('isAuthenticated', 'false');
+    localStorage.setItem('favorites', '[]');
   }
 
   async showAlert(message: string) {
